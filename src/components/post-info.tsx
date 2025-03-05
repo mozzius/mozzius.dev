@@ -31,7 +31,7 @@ export function PostInfo({
             className="inline rounded-full mr-1 mb-1"
           />
           <a
-            href={`https://bsky.app/profile/${env.BSKY_DID}`}
+            href={`https://bsky.app/profile/${env.NEXT_PUBLIC_BSKY_DID}`}
             className="hover:underline hover:underline-offset-4"
           >
             Samuel

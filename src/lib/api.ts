@@ -9,7 +9,7 @@ import { env } from "./env";
 export async function getPosts() {
   const posts = await bsky.get("com.atproto.repo.listRecords", {
     params: {
-      repo: env.BSKY_DID,
+      repo: env.NEXT_PUBLIC_BSKY_DID,
       collection: "com.whtwnd.blog.entry",
       // todo: pagination
     },
@@ -30,7 +30,7 @@ function drafts(record: ComAtprotoRepoListRecords.Record) {
 export async function getPost(rkey: string) {
   const post = await bsky.get("com.atproto.repo.getRecord", {
     params: {
-      repo: env.BSKY_DID,
+      repo: env.NEXT_PUBLIC_BSKY_DID,
       rkey: rkey,
       collection: "com.whtwnd.blog.entry",
     },
