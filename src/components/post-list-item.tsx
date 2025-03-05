@@ -52,7 +52,7 @@ export function PostListItem({
       {isHovered && (
         <div
           className={cx(
-            "fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center",
+            "fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center",
             isLeaving ? "animate-fade-out" : "animate-fade-in",
           )}
         >

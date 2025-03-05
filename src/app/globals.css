@@ -53,17 +53,17 @@
   @keyframes marquee {
     0% {
       opacity: 0;
-      transform: translateX(1000px);
+      transform: translateX(0px);
     }
-    3% {
+    2% {
       opacity: 0.075;
     }
-    97% {
+    98% {
       opacity: 0.075;
     }
     100% {
       opacity: 0;
-      transform: translateX(-1000px);
+      transform: translateX(-4000px);
     }
   }
 
@@ -86,7 +86,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 15s linear infinite;
+    animation: marquee 30s linear infinite;
     font-size: 100vh;
     line-height: 0.8;
     height: 100vh;
