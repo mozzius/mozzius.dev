@@ -1,6 +1,10 @@
 import { purgeCache } from "./actions";
 
-export default async function Purge({searchParams}: {searchParams: Promise<{error?: string}>}) {
+export default async function Purge({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
   const { error } = await searchParams;
   return (
     <form

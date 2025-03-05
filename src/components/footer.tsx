@@ -11,7 +11,12 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg width={16} height={16} viewBox="0 0 24 24" className="fill-black dark:fill-white">
+        <svg
+          width={16}
+          height={16}
+          viewBox="0 0 24 24"
+          className="fill-black dark:fill-white"
+        >
           <path d={BlueskyIcon.path} />
         </svg>
         Bluesky
@@ -22,7 +27,12 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg width={16} height={16} viewBox="0 0 24 24" className="fill-black dark:fill-white">
+        <svg
+          width={16}
+          height={16}
+          viewBox="0 0 24 24"
+          className="fill-black dark:fill-white"
+        >
           <path d={GithubIcon.path} />
         </svg>
         GitHub

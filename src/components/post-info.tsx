@@ -39,7 +39,8 @@ export function PostInfo({
       )}
       {createdAt && (
         <>
-          <time dateTime={createdAt}>{date(new Date(createdAt))}</time> &middot;{" "}
+          <time dateTime={createdAt}>{date(new Date(createdAt))}</time>{" "}
+          &middot;{" "}
         </>
       )}
       <ClockIcon className="text-inherit inline size-3.5 mb-0.5" />{" "}

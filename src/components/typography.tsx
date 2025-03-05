@@ -54,7 +54,7 @@ export function Code({ className, ...props }: React.HTMLProps<HTMLElement>) {
   return (
     <code
       className={cx(
-        "font-mono normal-case relative rounded px-[0.3rem] py-[0.2rem] bg-slate-100 text-sm dark:bg-slate-800 dark:text-slate-100",
+        "font-mono normal-case relative rounded-sm px-[0.3rem] py-[0.2rem] bg-slate-100 text-sm dark:bg-slate-800 dark:text-slate-100",
         className,
       )}
       {...props}

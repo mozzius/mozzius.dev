@@ -51,7 +51,7 @@ export function BlueskyPostEmbed({ uri }: { uri: string }) {
       data-uri={uri}
     >
       <iframe
-        className="w-full block border-none flex-grow"
+        className="w-full block border-none grow"
         style={{ height }}
         data-bluesky-uri={uri}
         src={`${EMBED_URL}/embed/${uri.slice("at://".length)}?${searchParams.toString()}`}

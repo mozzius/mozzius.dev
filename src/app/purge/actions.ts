@@ -8,9 +8,9 @@ export async function purgeCache(formData: FormData) {
   if (password === process.env.PURGE_PASSWORD) {
     revalidatePath("/", "page");
     revalidatePath("/post/[rkey]", "page");
-    redirect('/')
+    redirect("/");
   } else {
     console.error(`Invalid password: ${password}`);
-    redirect('/purge?error=yeah')
+    redirect("/purge?error=yeah");
   }
 }
