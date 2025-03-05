@@ -34,6 +34,9 @@ async function ViewCountInner({ path }: { path: string }) {
       date_range: "all",
       filters: [["is", "event:page", [path]]],
     }),
+    next: {
+      revalidate: 60 * 60,
+    },
   });
   const data = (await response.json()) as
     | {

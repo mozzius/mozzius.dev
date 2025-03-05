@@ -8,13 +8,16 @@ import { cx } from "#/lib/cx";
 
 import { PostInfo } from "./post-info";
 import { Title } from "./typography";
+import { ViewCount } from "./view-count";
 
 export function PostListItem({
   post,
   rkey,
+  viewCount,
 }: {
   post: ComWhtwndBlogEntry.Record;
   rkey: string;
+  viewCount?: React.ReactNode;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
@@ -75,7 +78,9 @@ export function PostListItem({
               content={post.content}
               createdAt={post.createdAt}
               className="text-xs"
-            />
+            >
+              {viewCount}
+            </PostInfo>
           </div>
         </article>
       </Link>
