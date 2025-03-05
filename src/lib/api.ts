@@ -3,12 +3,13 @@ import {
   type ComWhtwndBlogEntry,
 } from "@atcute/client/lexicons";
 
-import { bsky, MY_DID } from "./bsky";
+import { bsky } from "./bsky";
+import { env } from "./env";
 
 export async function getPosts() {
   const posts = await bsky.get("com.atproto.repo.listRecords", {
     params: {
-      repo: MY_DID,
+      repo: env.BSKY_DID,
       collection: "com.whtwnd.blog.entry",
       // todo: pagination
     },
@@ -29,7 +30,7 @@ function drafts(record: ComAtprotoRepoListRecords.Record) {
 export async function getPost(rkey: string) {
   const post = await bsky.get("com.atproto.repo.getRecord", {
     params: {
-      repo: MY_DID,
+      repo: env.BSKY_DID,
       rkey: rkey,
       collection: "com.whtwnd.blog.entry",
     },

@@ -15,7 +15,7 @@ import { PostInfo } from "#/components/post-info";
 import { Code, Paragraph, Title } from "#/components/typography";
 import { ViewCount } from "#/components/view-count";
 import { getPost, getPosts } from "#/lib/api";
-import { MY_DID } from "#/lib/bsky";
+import { env } from "#/lib/env";
 
 export const dynamic = "force-static";
 export const revalidate = 3600; // 1 hour
@@ -31,7 +31,9 @@ export async function generateMetadata({
 
   return {
     title: post.value.title + " — mozzius.dev",
-    authors: [{ name: "Samuel", url: `https://bsky.app/profile/${MY_DID}` }],
+    authors: [
+      { name: "Samuel", url: `https://bsky.app/profile/${env.BSKY_DID}` },
+    ],
     description: `by Samuel · ${readingTime(post.value.content).text}`,
   };
 }

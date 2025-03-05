@@ -3,8 +3,8 @@ import Image from "next/image";
 import readingTime from "reading-time";
 
 import me from "#/assets/me_blue_square.jpg";
-import { MY_DID } from "#/lib/bsky";
 import { date } from "#/lib/date";
+import { env } from "#/lib/env";
 
 import { Paragraph } from "./typography";
 
@@ -31,7 +31,7 @@ export function PostInfo({
             className="inline rounded-full mr-1 mb-1"
           />
           <a
-            href={`https://bsky.app/profile/${MY_DID}`}
+            href={`https://bsky.app/profile/${env.BSKY_DID}`}
             className="hover:underline hover:underline-offset-4"
           >
             Samuel
