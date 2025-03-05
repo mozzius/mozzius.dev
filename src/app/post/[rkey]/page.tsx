@@ -1,5 +1,4 @@
 import { ArrowLeftIcon } from "lucide-react";
-import { Suspense } from "react";
 import Markdown from "react-markdown";
 import { type Metadata } from "next";
 import Image from "next/image";
