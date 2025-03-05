@@ -67,16 +67,16 @@ export function PostListItem({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <article className="w-full flex flex-row border-b items-stretch relative transition-all backdrop-blur-xs hover:backdrop-blur-md backdrop-filter hover:bg-slate-700/5 dark:hover:bg-slate-200/10">
+        <article className="w-full flex flex-row border-b items-stretch relative transition-color backdrop-blur-sm hover:bg-slate-700/5 dark:hover:bg-slate-200/10">
           <div className="w-1.5 diagonal-pattern shrink-0 opacity-20 group-hover:opacity-100 transition-opacity" />
-          <div className="flex-1 pt-2 pb-2 px-4 z-10 relative">
+          <div className="flex-1 py-2 px-4 z-10 relative">
             <Title className="text-lg" level="h3">
               {post.title}
             </Title>
             <PostInfo
               content={post.content}
               createdAt={post.createdAt}
-              className="text-xs"
+              className="text-xs mt-1"
             >
               {viewCount}
             </PostInfo>
