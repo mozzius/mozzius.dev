@@ -10,7 +10,7 @@ export async function ViewCount({ path }: { path: string }) {
       &middot; <EyeIcon className="text-inherit inline size-3.5 mb-0.5" />{" "}
       <Suspense
         fallback={
-          <span className="inline-block w-20 h-4 rounded-sm bg-gray-100 dark:bg-gray-800 align-middle mb-0.5" />
+          <span className="inline-block w-18 h-3 rounded-sm bg-gray-100 dark:bg-gray-800 align-middle mb-0.5" />
         }
       >
         <ViewCountInner path={path} />
