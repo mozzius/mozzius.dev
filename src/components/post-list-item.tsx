@@ -8,7 +8,6 @@ import { cx } from "#/lib/cx";
 
 import { PostInfo } from "./post-info";
 import { Title } from "./typography";
-import { ViewCount } from "./view-count";
 
 export function PostListItem({
   post,
