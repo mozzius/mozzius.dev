@@ -12,10 +12,12 @@ export function PostInfo({
   createdAt,
   content,
   includeAuthor = false,
+  children,
 }: {
   createdAt?: string;
   content: string;
   includeAuthor?: boolean;
+  children?: React.ReactNode;
 }) {
   return (
     <Paragraph>
@@ -45,6 +47,7 @@ export function PostInfo({
       )}
       <ClockIcon className="text-inherit inline size-3.5 mb-0.5" />{" "}
       {readingTime(content).text}
+      {children}
     </Paragraph>
   );
 }

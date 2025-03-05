@@ -1,4 +1,5 @@
 import { ArrowLeftIcon } from "lucide-react";
+import { Suspense } from "react";
 import Markdown from "react-markdown";
 import { type Metadata } from "next";
 import Image from "next/image";
@@ -13,6 +14,7 @@ import { BlueskyPostEmbed } from "#/components/bluesky-embed";
 import { Footer } from "#/components/footer";
 import { PostInfo } from "#/components/post-info";
 import { Code, Paragraph, Title } from "#/components/typography";
+import { ViewCount } from "#/components/view-count";
 import { getPost, getPosts } from "#/lib/api";
 import { MY_DID } from "#/lib/bsky";
 
@@ -62,7 +64,9 @@ export default async function BlogPage({
               content={post.value.content}
               createdAt={post.value.createdAt}
               includeAuthor
-            />
+            >
+              <ViewCount path={`/post/${rkey}`} />
+            </PostInfo>
             <div className="diagonal-pattern w-full h-3" />
           </div>
           <div className="[&>.bluesky-embed]:mt-8 [&>.bluesky-embed]:mb-0">
