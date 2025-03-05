@@ -56,10 +56,10 @@
       transform: translateX(1000px);
     }
     3% {
-      opacity: 0.15;
+      opacity: 0.075;
     }
     97% {
-      opacity: 0.15;
+      opacity: 0.075;
     }
     100% {
       opacity: 0;
