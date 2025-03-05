@@ -71,7 +71,11 @@ export function PostListItem({
             <Title className="text-lg" level="h3">
               {post.title}
             </Title>
-            <PostInfo content={post.content} createdAt={post.createdAt} />
+            <PostInfo
+              content={post.content}
+              createdAt={post.createdAt}
+              className="text-xs"
+            />
           </div>
         </article>
       </Link>

@@ -12,15 +12,17 @@ export function PostInfo({
   createdAt,
   content,
   includeAuthor = false,
+  className,
   children,
 }: {
   createdAt?: string;
   content: string;
   includeAuthor?: boolean;
+  className?: string;
   children?: React.ReactNode;
 }) {
   return (
-    <Paragraph>
+    <Paragraph className={className}>
       {includeAuthor && (
         <>
           <Image
@@ -28,7 +30,7 @@ export function PostInfo({
             height={14}
             src={me}
             alt="Samuel's profile picture"
-            className="inline rounded-full mr-1 mb-1"
+            className="inline rounded-full mr-1.5 mb-0.5"
           />
           <a
             href={`https://bsky.app/profile/${env.NEXT_PUBLIC_BSKY_DID}`}

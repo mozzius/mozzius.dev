@@ -68,6 +68,7 @@ export default async function BlogPage({
               content={post.value.content}
               createdAt={post.value.createdAt}
               includeAuthor
+              className="text-sm"
             >
               <ViewCount path={`/post/${rkey}`} />
             </PostInfo>
