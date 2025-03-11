@@ -44,6 +44,7 @@ export function BlueskyPostEmbed({ uri }: { uri: string }) {
   const searchParams = new URLSearchParams();
   searchParams.set("id", id);
   searchParams.set("ref_url", encodeURIComponent(ref_url));
+  searchParams.set("colorMode", "system");
 
   return (
     <div
