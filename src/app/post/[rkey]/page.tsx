@@ -51,9 +51,9 @@ export default async function BlogPage({
   const post = await getPost(rkey);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-dvh py-8 px-4 xs:px-8 pb-20 gap-16 sm:p-20">
+    <div className="flex flex-col items-center min-h-dvh pt-8 px-4 xs:px-8 pb-20 gap-16 sm:pt-48">
       <link rel="alternate" href={post.uri} />
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full max-w-[600px] overflow-hidden">
+      <main className="flex-1 flex flex-col gap-8 items-center sm:items-start w-full max-w-[600px]">
         <article className="w-full space-y-8">
           <div className="space-y-4 w-full">
             <Link
@@ -139,7 +139,7 @@ export default async function BlogPage({
                         // eslint-disable-next-line react/no-children-prop
                         children={String(children).replace(/\n$/, "")}
                         lang={match[1]}
-                        className="mt-8! text-sm rounded-sm max-w-full! overflow-hidden"
+                        className="mt-8! text-sm rounded-sm"
                       />
                     );
                   } else {
@@ -156,8 +156,8 @@ export default async function BlogPage({
                 img: ({ src, alt }) => (
                   <span className="block mt-8 w-full aspect-video relative">
                     <Image
-                      src={src!}
-                      alt={alt!}
+                      src={src as string}
+                      alt={alt as string}
                       className="object-contain"
                       quality={90}
                       fill
