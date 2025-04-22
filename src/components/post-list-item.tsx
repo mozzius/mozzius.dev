@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 import Link from "next/link";
 import { ComWhtwndBlogEntry } from "@atcute/client/lexicons";
 
@@ -70,9 +75,11 @@ export function PostListItem({
         <article className="w-full flex flex-row border-b items-stretch relative transition-color backdrop-blur-sm hover:bg-slate-700/5 dark:hover:bg-slate-200/10">
           <div className="w-1.5 diagonal-pattern shrink-0 opacity-20 group-hover:opacity-100 transition-opacity" />
           <div className="flex-1 py-2 px-4 z-10 relative">
-            <Title className="text-lg" level="h3">
-              {post.title}
-            </Title>
+            <ViewTransition name={`post-title-${rkey}`}>
+              <Title className="text-lg" level="h3">
+                {post.title}
+              </Title>
+            </ViewTransition>
             <PostInfo
               content={post.content}
               createdAt={post.createdAt}

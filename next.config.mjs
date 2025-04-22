@@ -2,6 +2,10 @@ import { withPlausibleProxy } from "next-plausible";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    viewTransition: true,
+  },
   images: {
     remotePatterns: [
       {

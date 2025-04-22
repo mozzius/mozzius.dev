@@ -1,4 +1,5 @@
 import { ArrowLeftIcon } from "lucide-react";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import Markdown from "react-markdown";
 import { type Metadata } from "next";
 import Image from "next/image";
@@ -63,7 +64,9 @@ export default async function BlogPage({
               <ArrowLeftIcon className="inline size-4 align-middle mb-px mr-1" />
               Back
             </Link>
-            <Title>{post.value.title}</Title>
+            <ViewTransition name={`post-title-${rkey}`}>
+              <Title>{post.value.title}</Title>
+            </ViewTransition>
             <PostInfo
               content={post.value.content}
               createdAt={post.value.createdAt}
