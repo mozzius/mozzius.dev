@@ -39,6 +39,9 @@ export async function generateMetadata({
       },
     ],
     description: `by Samuel · ${readingTime(post.value.content).text}`,
+    alternates: {
+      canonical: `https://mozzius.dev/post/${rkey}`,
+    },
   };
 }
 

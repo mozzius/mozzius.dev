@@ -29,12 +29,6 @@ const mono = localFont({
 export const metadata: Metadata = {
   title: "mozzius.dev",
   description: "a webbed site",
-  alternates: {
-    canonical: "https://mozzius.dev",
-    types: {
-      "application/rss+xml": "https://mozzius.dev/rss",
-    },
-  },
 };
 
 export default function RootLayout({

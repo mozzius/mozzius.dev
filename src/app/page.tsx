@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { Footer } from "#/components/footer";
@@ -6,6 +7,15 @@ import { Title } from "#/components/typography";
 
 export const dynamic = "force-static";
 export const revalidate = 3600; // 1 hour
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://mozzius.dev",
+    types: {
+      "application/rss+xml": "https://mozzius.dev/rss",
+    },
+  },
+};
 
 export default function Home() {
   return (
