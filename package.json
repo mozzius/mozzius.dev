@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "packageManager": "pnpm@11.2.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
