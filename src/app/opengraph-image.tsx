@@ -15,29 +15,27 @@ export default async function OpenGraphImage() {
   );
 
   return new ImageResponse(
-    (
-      <div tw="h-full w-full bg-white flex flex-col justify-center items-center">
-        <h1
-          style={{
-            fontFamily: '"Libre Baskerville"',
-            fontSize: 80,
-            fontWeight: 700,
-            fontStyle: "italic",
-          }}
-        >
-          MOZZIUS.DEV
-        </h1>
-        <h1
-          style={{
-            fontSize: 32,
-            fontStyle: "italic",
-            fontFamily: '"Libre Baskerville"',
-          }}
-        >
-          a webbed site
-        </h1>
-      </div>
-    ),
+    <div tw="h-full w-full bg-white flex flex-col justify-center items-center">
+      <h1
+        style={{
+          fontFamily: '"Libre Baskerville"',
+          fontSize: 80,
+          fontWeight: 700,
+          fontStyle: "italic",
+        }}
+      >
+        MOZZIUS.DEV
+      </h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontStyle: "italic",
+          fontFamily: '"Libre Baskerville"',
+        }}
+      >
+        a webbed site
+      </h1>
+    </div>,
     {
       ...size,
       fonts: [

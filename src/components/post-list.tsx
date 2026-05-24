@@ -6,16 +6,12 @@ import { ViewCount } from "./view-count";
 export async function PostList() {
   const posts = await getPosts();
 
-  return posts.map((record) => {
-    const post = record.value;
-    const rkey = record.uri.split("/").pop() || "";
-    return (
-      <PostListItem
-        key={record.uri}
-        post={post}
-        rkey={rkey}
-        viewCount={<ViewCount path={`/post/${rkey}`} />}
-      />
-    );
-  });
+  return posts.map((post) => (
+    <PostListItem
+      key={post.uri}
+      post={post}
+      rkey={post.rkey}
+      viewCount={<ViewCount path={`/post/${post.rkey}`} />}
+    />
+  ));
 }

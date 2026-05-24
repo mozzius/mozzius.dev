@@ -39,12 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <NextPlausible
-          domain="mozzius.dev"
-          customDomain="https://plausible.mozzius.dev"
-          trackOutboundLinks
-          selfHosted
-        />
+        <NextPlausible />
       </head>
       <body
         className={cx(

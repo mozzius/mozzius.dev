@@ -1,9 +1,10 @@
 import { ArrowLeftIcon } from "lucide-react";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { ViewTransition } from "react";
 import Markdown from "react-markdown";
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Code as SyntaxHighlighter } from "bright";
 import readingTime from "reading-time";
 import rehypeRaw from "rehype-raw";
@@ -29,16 +30,17 @@ export async function generateMetadata({
   const { rkey } = await params;
 
   const post = await getPost(rkey);
+  if (!post) notFound();
 
   return {
-    title: post.value.title + " — mozzius.dev",
+    title: post.title + " — mozzius.dev",
     authors: [
       {
         name: "Samuel",
         url: `https://bsky.app/profile/${env.NEXT_PUBLIC_BSKY_DID}`,
       },
     ],
-    description: `by Samuel · ${readingTime(post.value.content).text}`,
+    description: `by Samuel · ${readingTime(post.markdown).text}`,
     alternates: {
       canonical: `https://mozzius.dev/post/${rkey}`,
     },
@@ -53,6 +55,7 @@ export default async function BlogPage({
   const { rkey } = await params;
 
   const post = await getPost(rkey);
+  if (!post) notFound();
 
   return (
     <div className="flex flex-col items-center min-h-dvh pt-8 px-4 xs:px-8 pb-20 gap-16 sm:pt-48">
@@ -68,11 +71,11 @@ export default async function BlogPage({
               Back
             </Link>
             <ViewTransition name={`post-title-${rkey}`}>
-              <Title>{post.value.title}</Title>
+              <Title>{post.title}</Title>
             </ViewTransition>
             <PostInfo
-              content={post.value.content}
-              createdAt={post.value.createdAt}
+              content={post.markdown}
+              createdAt={post.publishedAt}
               includeAuthor
               className="text-sm"
             >
@@ -172,7 +175,7 @@ export default async function BlogPage({
                 ),
               }}
             >
-              {post.value.content}
+              {post.markdown}
             </Markdown>
           </div>
         </article>
@@ -186,6 +189,6 @@ export default async function BlogPage({
 export async function generateStaticParams() {
   const posts = await getPosts();
   return posts.map((post) => ({
-    rkey: post.uri.split("/").pop(),
+    rkey: post.rkey,
   }));
 }

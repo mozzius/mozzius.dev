@@ -35,3 +35,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated lexicon codegen (regenerated from lexicons/ via `lex build` on postinstall)
+/src/lexicons/

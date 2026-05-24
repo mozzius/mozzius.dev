@@ -22,16 +22,16 @@ export async function GET() {
 
   for (const post of posts) {
     rss.item({
-      title: post.value.title ?? "Untitled",
+      title: post.title ?? "Untitled",
       description: await unified()
         .use(remarkParse)
         .use(remarkRehype)
         .use(rehypeFormat)
         .use(rehypeStringify)
-        .process(post.value.content)
+        .process(post.markdown)
         .then((v) => v.toString()),
-      url: `https://mozzius.dev/post/${post.uri.split("/").pop()}`,
-      date: new Date(post.value.createdAt ?? Date.now()),
+      url: `https://mozzius.dev/post/${post.rkey}`,
+      date: new Date(post.publishedAt ?? Date.now()),
     });
   }
 

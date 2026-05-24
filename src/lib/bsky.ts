@@ -1,9 +1,6 @@
-import { CredentialManager, XRPC } from "@atcute/client";
+import { Client } from "@atproto/lex";
 
 import { env } from "./env";
 
-const handler = new CredentialManager({
-  service: env.NEXT_PUBLIC_BSKY_PDS,
-  fetch,
-});
-export const bsky = new XRPC({ handler });
+// Read-only client pointed at the PDS that hosts the blog records.
+export const client = new Client(env.NEXT_PUBLIC_BSKY_PDS);

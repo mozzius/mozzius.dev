@@ -19,5 +19,5 @@ const nextConfig = {
 };
 
 export default withPlausibleProxy({
-  customDomain: "https://plausible.mozzius.dev",
+  src: "https://plausible.mozzius.dev/js/pa-9Z9tz6awtn6xUA8Zs_MyY.js",
 })(nextConfig);

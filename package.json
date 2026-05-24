@@ -9,18 +9,32 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier -w src",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lex:build": "lex build --clear --importExt \"\"",
+    "migrate": "node scripts/migrate-to-standard.ts",
+    "postinstall": "lex build --clear --importExt \"\""
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.16.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.2.2",
+      "onFail": "error"
+    }
   },
   "dependencies": {
-    "@atcute/client": "^3.0.1",
-    "@atcute/whitewind": "^2.0.0",
+    "@atproto/lex": "^0.1.2",
     "bright": "^1.0.0",
-    "envalid": "^8.0.0",
-    "lucide-react": "^0.503.0",
-    "next": "15.3.6",
-    "next-plausible": "^3.12.4",
-    "react": "19.2.0-canary-bc6184dd-20250417",
-    "react-dom": "19.2.0-canary-bc6184dd-20250417",
+    "envalid": "^8.1.1",
+    "lucide-react": "^1.16.0",
+    "next": "16.2.6",
+    "next-plausible": "^4.0.0",
+    "react": "19.3.0-canary-d5736f09-20260507",
+    "react-dom": "19.3.0-canary-d5736f09-20260507",
     "react-markdown": "^10.1.0",
     "reading-time": "^1.5.0",
     "rehype-format": "^5.0.1",
@@ -31,25 +45,25 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "rss": "^1.2.2",
-    "simple-icons": "^14.12.3",
-    "tailwind-merge": "^3.2.0",
+    "simple-icons": "^16.21.0",
+    "tailwind-merge": "^3.6.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
-    "@tailwindcss/postcss": "^4.1.4",
-    "@types/node": "^22.14.1",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@atproto/lex-password-session": "^0.1.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
     "@types/rss": "^0.0.32",
-    "eslint": "^9.25.1",
-    "eslint-config-next": "15.3.1",
-    "eslint-config-prettier": "^10.1.2",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.1.4",
-    "typescript": "^5.8.3"
-  },
-  "packageManager": "pnpm@10.9.0"
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.2.6",
+    "eslint-config-prettier": "^10.1.8",
+    "postcss": "^8.5.15",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
+  }
 }

@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  unstable_ViewTransition as ViewTransition,
-} from "react";
+import { useEffect, useRef, useState, ViewTransition } from "react";
 import Link from "next/link";
-import { ComWhtwndBlogEntry } from "@atcute/client/lexicons";
 
+import type { Post } from "#/lib/api";
 import { cx } from "#/lib/cx";
 
 import { PostInfo } from "./post-info";
@@ -19,7 +14,7 @@ export function PostListItem({
   rkey,
   viewCount,
 }: {
-  post: ComWhtwndBlogEntry.Record;
+  post: Post;
   rkey: string;
   viewCount?: React.ReactNode;
 }) {
@@ -81,8 +76,8 @@ export function PostListItem({
               </Title>
             </ViewTransition>
             <PostInfo
-              content={post.content}
-              createdAt={post.createdAt}
+              content={post.markdown}
+              createdAt={post.publishedAt}
               className="text-xs mt-1"
             >
               {viewCount}

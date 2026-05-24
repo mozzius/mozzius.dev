@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 
 import { getPost } from "#/lib/api";
@@ -17,37 +18,36 @@ export default async function OpenGraphImage({
   const { rkey } = await params;
 
   const post = await getPost(rkey);
+  if (!post) notFound();
 
   const fontData = await loadGoogleFont(
     "Libre+Baskerville:ital@1",
-    "mozzius.dev" + post.value.title?.toLocaleUpperCase(),
+    "mozzius.dev" + post.title?.toLocaleUpperCase(),
   );
 
   return new ImageResponse(
-    (
-      <div tw="h-full w-full bg-white flex flex-col justify-center items-center px-20">
-        <h1
-          style={{
-            fontFamily: '"Libre Baskerville"',
-            fontSize: 80,
-            fontWeight: 700,
-            fontStyle: "italic",
-            textAlign: "center",
-          }}
-        >
-          {post.value.title?.toLocaleUpperCase()}
-        </h1>
-        <h1
-          style={{
-            fontSize: 32,
-            fontStyle: "italic",
-            fontFamily: '"Libre Baskerville"',
-          }}
-        >
-          mozzius.dev
-        </h1>
-      </div>
-    ),
+    <div tw="h-full w-full bg-white flex flex-col justify-center items-center px-20">
+      <h1
+        style={{
+          fontFamily: '"Libre Baskerville"',
+          fontSize: 80,
+          fontWeight: 700,
+          fontStyle: "italic",
+          textAlign: "center",
+        }}
+      >
+        {post.title?.toLocaleUpperCase()}
+      </h1>
+      <h1
+        style={{
+          fontSize: 32,
+          fontStyle: "italic",
+          fontFamily: '"Libre Baskerville"',
+        }}
+      >
+        mozzius.dev
+      </h1>
+    </div>,
     {
       ...size,
       fonts: [
