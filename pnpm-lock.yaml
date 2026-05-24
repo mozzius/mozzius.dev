@@ -302,7 +302,7 @@ importers:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.39.4(jiti@2.7.0))
       node:
-        specifier: runtime:^24.16.0
+        specifier: runtime:^24.15.0
         version: runtime:24.16.0
       postcss:
         specifier: ^8.5.15
