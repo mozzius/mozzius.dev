@@ -59,7 +59,12 @@ export default async function BlogPage({
 
   return (
     <div className="flex flex-col items-center min-h-dvh pt-8 px-4 xs:px-8 pb-20 gap-16 sm:pt-48">
-      <link rel="alternate" href={post.uri} />
+      {/* standard.site references so Bluesky renders the enhanced link card */}
+      <link rel="site.standard.document" href={post.uri} />
+      <link
+        rel="site.standard.publication"
+        href={env.NEXT_PUBLIC_PUBLICATION_URI}
+      />
       <main className="flex-1 flex flex-col gap-8 items-center sm:items-start w-full max-w-[600px]">
         <article className="w-full space-y-8">
           <div className="space-y-4 w-full">
