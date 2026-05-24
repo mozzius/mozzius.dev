@@ -6,15 +6,17 @@
   "packageManager": "pnpm@11.2.2",
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm lex:ci && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier -w src",
     "typecheck": "tsc --noEmit",
+    "prebuild": "pnpm lex:build",
+    "postinstall": "pnpm lex:ci",
     "lex:build": "lex build --clear --importExt \"\"",
-    "lex:ci": "lex build --clear --importExt \"\" --ci",
-    "migrate": "node scripts/migrate-to-standard.ts",
-    "postinstall": "pnpm lex:ci"
+    "lex:install": "lex install",
+    "lex:ci": "lex install --ci",
+    "migrate": "node scripts/migrate-to-standard.ts"
   },
   "devEngines": {
     "runtime": {
