@@ -15,7 +15,7 @@
     "migrate": "node scripts/migrate-to-standard.ts",
     "postinstall": "lex build --clear --importExt \"\""
   },
-  "#devEngines": {
+  "devEngines": {
     "runtime": {
       "name": "node",
       "version": "^24.15.0",
