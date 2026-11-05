@@ -1,7 +1,0 @@
-allowBuilds:
-  core-js: true
-  esbuild: set this to true or false
-  sharp: true
-  unrs-resolver: true
-minimumReleaseAgeExclude:
-  - simple-icons@16.21.0
